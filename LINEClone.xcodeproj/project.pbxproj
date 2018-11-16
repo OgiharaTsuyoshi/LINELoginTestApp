@@ -20,10 +20,10 @@
 		0DCF297B219D56350050395B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF297A219D56350050395B /* Security.framework */; };
 		0DCF297E219D57CE0050395B /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF297D219D57CE0050395B /* loginViewController.swift */; };
 		0DCF2980219D5F850050395B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF297F219D5F850050395B /* CustomTableViewCell.swift */; };
-		485DFFC3219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC2219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png */; };
-		485DFFC5219EFF86002E0B35 /* f-ogo_RGB_HEX-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC4219EFF85002E0B35 /* f-ogo_RGB_HEX-100.png */; };
-		485DFFC7219F0052002E0B35 /* Twitter_Social_Icon_Square_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC6219F0052002E0B35 /* Twitter_Social_Icon_Square_Color.png */; };
-		485DFFC9219F0A7D002E0B35 /* LINE_SOCIAL_Square_typeB.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC8219F0A7D002E0B35 /* LINE_SOCIAL_Square_typeB.png */; };
+		485DFFC3219EFE81002E0B35 /* lineLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC2219EFE81002E0B35 /* lineLogo.png */; };
+		485DFFC5219EFF86002E0B35 /* facebookLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC4219EFF85002E0B35 /* facebookLogo.png */; };
+		485DFFC7219F0052002E0B35 /* twitterLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC6219F0052002E0B35 /* twitterLogo.png */; };
+		485DFFC9219F0A7D002E0B35 /* lineSend.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC8219F0A7D002E0B35 /* lineSend.png */; };
 		9B687CF83A087C1C8E8F41D3 /* Pods_LINECloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A130CE01A78BEA81787AEED3 /* Pods_LINECloneUITests.framework */; };
 		AF90495F3A090C034185F3E0 /* Pods_LINECloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C902337A2BB051C32D541F2B /* Pods_LINECloneTests.framework */; };
 		CFB5397D5CAFE97301D2A1B5 /* Pods_LINEClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E80E792BD4B42BF357E6D5 /* Pods_LINEClone.framework */; };
@@ -70,10 +70,10 @@
 		3588519ACA3B8E3FC1374859 /* Pods-LINECloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINECloneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LINECloneUITests/Pods-LINECloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		40A61A6064DCA48F914FC8F8 /* Pods-LINEClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINEClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LINEClone/Pods-LINEClone.debug.xcconfig"; sourceTree = "<group>"; };
 		47A933043CE6C264101DBE47 /* Pods-LINEClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINEClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-LINEClone/Pods-LINEClone.release.xcconfig"; sourceTree = "<group>"; };
-		485DFFC2219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LINE_SOCIAL_Square_typeA.png; sourceTree = "<group>"; };
-		485DFFC4219EFF85002E0B35 /* f-ogo_RGB_HEX-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f-ogo_RGB_HEX-100.png"; sourceTree = "<group>"; };
-		485DFFC6219F0052002E0B35 /* Twitter_Social_Icon_Square_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_Social_Icon_Square_Color.png; sourceTree = "<group>"; };
-		485DFFC8219F0A7D002E0B35 /* LINE_SOCIAL_Square_typeB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LINE_SOCIAL_Square_typeB.png; sourceTree = "<group>"; };
+		485DFFC2219EFE81002E0B35 /* lineLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineLogo.png; sourceTree = "<group>"; };
+		485DFFC4219EFF85002E0B35 /* facebookLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogo.png; sourceTree = "<group>"; };
+		485DFFC6219F0052002E0B35 /* twitterLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLogo.png; sourceTree = "<group>"; };
+		485DFFC8219F0A7D002E0B35 /* lineSend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineSend.png; sourceTree = "<group>"; };
 		985F2091DE026F676BECEDE0 /* Pods-LINECloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINECloneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LINECloneTests/Pods-LINECloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A130CE01A78BEA81787AEED3 /* Pods_LINECloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LINECloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99F7C03C5AB22DC7B784E56 /* Pods-LINECloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINECloneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LINECloneTests/Pods-LINECloneTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,10 +174,10 @@
 		485DFFC1219EFE4E002E0B35 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				485DFFC8219F0A7D002E0B35 /* LINE_SOCIAL_Square_typeB.png */,
-				485DFFC6219F0052002E0B35 /* Twitter_Social_Icon_Square_Color.png */,
-				485DFFC4219EFF85002E0B35 /* f-ogo_RGB_HEX-100.png */,
-				485DFFC2219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png */,
+				485DFFC8219F0A7D002E0B35 /* lineSend.png */,
+				485DFFC6219F0052002E0B35 /* twitterLogo.png */,
+				485DFFC4219EFF85002E0B35 /* facebookLogo.png */,
+				485DFFC2219EFE81002E0B35 /* lineLogo.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -321,13 +321,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485DFFC7219F0052002E0B35 /* Twitter_Social_Icon_Square_Color.png in Resources */,
+				485DFFC7219F0052002E0B35 /* twitterLogo.png in Resources */,
 				0DCF294F219D23C70050395B /* LaunchScreen.storyboard in Resources */,
-				485DFFC9219F0A7D002E0B35 /* LINE_SOCIAL_Square_typeB.png in Resources */,
+				485DFFC9219F0A7D002E0B35 /* lineSend.png in Resources */,
 				0DCF294C219D23C70050395B /* Assets.xcassets in Resources */,
 				0DCF294A219D23C60050395B /* Main.storyboard in Resources */,
-				485DFFC3219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png in Resources */,
-				485DFFC5219EFF86002E0B35 /* f-ogo_RGB_HEX-100.png in Resources */,
+				485DFFC3219EFE81002E0B35 /* lineLogo.png in Resources */,
+				485DFFC5219EFF86002E0B35 /* facebookLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

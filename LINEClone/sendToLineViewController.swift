@@ -14,11 +14,12 @@ class sendToLineViewController: UIViewController, UIDocumentInteractionControlle
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
-    var selectedNumber:Int = 0
     @IBOutlet var textLabel: UILabel!
-    
+    //選択したcellの番号
+    var selectedNumber:Int = 0
+    //つぶやきの配列
     var tweetArray:Array = [String]()
-    
+    //LINEから取得したデータ格納用
     var displayName = String()
     var pictureUrlString = String()
     
@@ -32,23 +33,22 @@ class sendToLineViewController: UIViewController, UIDocumentInteractionControlle
             tweetArray = UserDefaults.standard.object(forKey: "array") as! [String]
             textLabel.text = tweetArray[selectedNumber]
             
-            
             userImageView.sd_setImage(with: URL(string: pictureUrlString))
             userImageView.layer.cornerRadius = userImageView.frame.width * 0.5
             userNameLabel.text = displayName
         }
         
     }
-    
+    //URL Schemeでアプリを起動して送信
     @IBAction func sendToLine() {
         let lineSchemeMessage: String! = "line://msg/text/"
         var scheme: String! = lineSchemeMessage + "[つぶやきがPostされました！]\n" + textLabel.text!
-        
+        //日本語を含むURLはエンコーディング
         scheme = scheme.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let messageURL: URL! = URL(string: scheme)
         UIApplication.shared.open(messageURL)
     }
-    
+    //戻るボタン
     @IBAction func backButton(){
         self.dismiss(animated: true, completion: nil)
     }

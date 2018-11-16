@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LINEClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -88,6 +87,7 @@
                         <segue destination="QVd-OK-3g6" kind="show" identifier="next" id="TIP-W7-iPg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="133.5832083958021"/>
         </scene>
@@ -134,7 +134,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC7-xA-879">
                                 <rect key="frame" x="259" y="335" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="LINE_SOCIAL_Square_typeB.png"/>
+                                <state key="normal" title="Button" image="lineSend.png"/>
                                 <connections>
                                     <action selector="sendToLine" destination="QVd-OK-3g6" eventType="touchUpInside" id="e9J-WJ-MpH"/>
                                 </connections>
@@ -182,12 +182,12 @@
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwt-ty-Vyp">
                                         <rect key="frame" x="147" y="85" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="f-ogo_RGB_HEX-100.png"/>
+                                        <state key="normal" title="Button" image="facebookLogo.png"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDy-5j-LCc">
                                         <rect key="frame" x="35" y="85" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="LINE_SOCIAL_Square_typeA.png"/>
+                                        <state key="normal" title="Button" image="lineLogo.png"/>
                                         <connections>
                                             <action selector="didTapLogin:" destination="PEi-dl-eF7" eventType="touchUpInside" id="Rge-fS-6Zj"/>
                                         </connections>
@@ -195,7 +195,7 @@
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4R-Xe-9OA">
                                         <rect key="frame" x="258" y="85" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="Twitter_Social_Icon_Square_Color.png"/>
+                                        <state key="normal" title="Button" image="twitterLogo.png"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,9 +237,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LINE_SOCIAL_Square_typeA.png" width="1000" height="1000"/>
-        <image name="LINE_SOCIAL_Square_typeB.png" width="1000" height="1000"/>
-        <image name="Twitter_Social_Icon_Square_Color.png" width="400" height="400"/>
-        <image name="f-ogo_RGB_HEX-100.png" width="100" height="100"/>
+        <image name="facebookLogo.png" width="100" height="100"/>
+        <image name="lineLogo.png" width="1000" height="1000"/>
+        <image name="lineSend.png" width="1000" height="1000"/>
+        <image name="twitterLogo.png" width="400" height="400"/>
     </resources>
 </document>

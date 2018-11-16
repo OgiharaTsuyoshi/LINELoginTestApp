@@ -32,7 +32,7 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
     @IBAction func didTapLogin(_ sender: UIButton) {
         LineSDKLogin.sharedInstance().start()
     }
-    
+    //LINEログイン
     func didLogin(_ login: LineSDKLogin, credential: LineSDKCredential?, profile: LineSDKProfile?, error: Error?) {
         if error != nil {
             print(error.debugDescription)
@@ -49,7 +49,7 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
         }
         performSegue(withIdentifier: "login", sender: nil)
     }
-    
+    //遷移先に値を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let VC:ViewController = segue.destination as! ViewController
         

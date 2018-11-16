@@ -15,9 +15,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     
-    
+    //つぶやきの配列
     var tweetArray = [String]()
+    //入力したつぶやきをcellで表示
     var label: UILabel = UILabel()
+    //LINEから取得したデータ格納用
     var displayName = String()
     var pictureUrlString = String()
     //選択したcellの番号を入れる
@@ -25,8 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //cellの幅を動的に調整
         self.tableView.estimatedRowHeight = 102
-        self.tableView.rowHeight = UITableView.automaticDimension //cellの幅を動的に
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
     }
-    
+    //キーボードのreturnが押下された時の処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         tweetArray.append(textField.text!)
         UserDefaults.standard.set(tweetArray, forKey: "array")
@@ -52,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(tweetArray)
         }
         
-        
+        //キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }
@@ -60,6 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    //SDWebImageを用いてURLから画像を取得しcellの生成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         
@@ -78,11 +82,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //cellがタップされた時
-        count = Int(indexPath.row)  //タップしたcellの番号
+        //cellがタップされた時タップしたcellの番号を保持
+        count = Int(indexPath.row)
         performSegue(withIdentifier: "next", sender: nil)
     }
-    
+    //スワイプで削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tweetArray.remove(at: indexPath.row)
@@ -91,7 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    
+    //遷移先に値を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "next"{
             let sendToLineVC:sendToLineViewController = segue.destination as! sendToLineViewController
