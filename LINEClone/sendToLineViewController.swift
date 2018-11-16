@@ -10,7 +10,7 @@ import UIKit
 import LineSDK
 import SDWebImage
 
-class sendToLineViewController: UIViewController, UIDocumentInteractionControllerDelegate {
+class sendToLineViewController: UIViewController {
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
@@ -42,7 +42,7 @@ class sendToLineViewController: UIViewController, UIDocumentInteractionControlle
     //URL Schemeでアプリを起動して送信
     @IBAction func sendToLine() {
         let lineSchemeMessage: String! = "line://msg/text/"
-        var scheme: String! = lineSchemeMessage + "[つぶやきがPostされました！]\n" + textLabel.text!
+        var scheme: String! = lineSchemeMessage + "[つぶやきがPostされました]\n" + textLabel.text!
         //日本語を含むURLはエンコーディング
         scheme = scheme.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let messageURL: URL! = URL(string: scheme)
