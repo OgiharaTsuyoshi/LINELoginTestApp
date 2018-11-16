@@ -39,11 +39,11 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
             return
         }
         
-        //dispName
+        //LineSDKProfileクラスのdisplayNameプロパティからユーザーネームを取得
         if let displayName = profile?.displayName {
             self.displayName = displayName
         }
-        //profilePic
+        //上記と同様 プロフィールメディアURLをStringに変換
         if let pictureURL = profile?.pictureURL {
             self.pictureUrlString = pictureURL.absoluteString
         }
