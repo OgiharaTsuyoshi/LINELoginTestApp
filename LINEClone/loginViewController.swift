@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import LineSDK
 
-class loginViewController: UIViewController, LineSDKLoginDelegate {
+class loginViewController: UIViewController {
     
     @IBOutlet var loginView: UIView!
     @IBOutlet var lineButton: UIButton!
@@ -22,37 +21,25 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        LineSDKLogin.sharedInstance().delegate = self
+        //SNSログイン画面のボタンを丸角にする
         lineButton.layer.cornerRadius = lineButton.frame.width * 0.5
         facebookButton.layer.cornerRadius = facebookButton.frame.width * 0.5
         twitterButton.layer.cornerRadius = twitterButton.frame.width * 0.5
+        
+        //LINEログイン処理のdelegateを設定
+        
+        
     }
     
     @IBAction func didTapLogin(_ sender: UIButton) {
-        LineSDKLogin.sharedInstance().start()
+        //LINEのログイン処理を追記する
     }
     
-    func didLogin(_ login: LineSDKLogin, credential: LineSDKCredential?, profile: LineSDKProfile?, error: Error?) {
-        if error != nil {
-            print(error.debugDescription)
-            return
-        }
-        
-        //dispName
-        if let displayName = profile?.displayName {
-            self.displayName = displayName
-        }
-        //profilePic
-        if let pictureURL = profile?.pictureURL {
-            self.pictureUrlString = pictureURL.absoluteString
-        }
-        performSegue(withIdentifier: "login", sender: nil)
-    }
+    //ログインした際の処理を追記する
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let VC:ViewController = segue.destination as! ViewController
-        
+        //TimeLineの遷移先へ取得したdisplayNameとpictureUrlStringを渡す
         VC.displayName = self.displayName
         VC.pictureUrlString = self.pictureUrlString
     }

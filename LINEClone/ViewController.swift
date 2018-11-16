@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LineSDK
 import SDWebImage
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
@@ -25,8 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TimeLineのcellの幅を動的に調整
         self.tableView.estimatedRowHeight = 102
-        self.tableView.rowHeight = UITableView.automaticDimension //cellの幅を動的に
+        self.tableView.rowHeight = UITableView.automaticDimension
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
     }
-    
+    //textFieldでキーボードのreturnが押下された時の処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         tweetArray.append(textField.text!)
         UserDefaults.standard.set(tweetArray, forKey: "array")
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(tweetArray)
         }
         
-        
+        //キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }
@@ -63,12 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         
-        cell.userImageView.sd_setImage(with: URL(string: pictureUrlString))
-        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.width * 0.5
-        cell.userNameLabel.text = displayName
-        label = cell.contentView.viewWithTag(1) as! UILabel
-        label.text = tweetArray[indexPath.row]
-        label.sizeToFit()
+        //cellのImageViewとLabelにLINEから取得したユーザーネームとアイコン、入力したつぶやきを入れる(追記)
         
         return cell
     }
@@ -79,10 +74,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //cellがタップされた時
-        count = Int(indexPath.row)  //タップしたcellの番号
+        count = Int(indexPath.row)  //タップしたcellの番号を保持
         performSegue(withIdentifier: "next", sender: nil)
     }
-    
+    //スワイプで削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tweetArray.remove(at: indexPath.row)

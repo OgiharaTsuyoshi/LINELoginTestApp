@@ -16,8 +16,6 @@
 		0DCF2965219D23C70050395B /* LINECloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF2964219D23C70050395B /* LINECloneUITests.swift */; };
 		0DCF2973219D24980050395B /* sendToLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF2972219D24980050395B /* sendToLineViewController.swift */; };
 		0DCF2977219D56100050395B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF2976219D56100050395B /* SDWebImage.framework */; };
-		0DCF2979219D561C0050395B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF2978219D561C0050395B /* CoreTelephony.framework */; };
-		0DCF297B219D56350050395B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCF297A219D56350050395B /* Security.framework */; };
 		0DCF297E219D57CE0050395B /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF297D219D57CE0050395B /* loginViewController.swift */; };
 		0DCF2980219D5F850050395B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF297F219D5F850050395B /* CustomTableViewCell.swift */; };
 		485DFFC3219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png in Resources */ = {isa = PBXBuildFile; fileRef = 485DFFC2219EFE81002E0B35 /* LINE_SOCIAL_Square_typeA.png */; };
@@ -64,7 +62,6 @@
 		0DCF2976219D56100050395B /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCF2978219D561C0050395B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0DCF297A219D56350050395B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		0DCF297C219D56540050395B /* LINEClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LINEClone.entitlements; sourceTree = "<group>"; };
 		0DCF297D219D57CE0050395B /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		0DCF297F219D5F850050395B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3588519ACA3B8E3FC1374859 /* Pods-LINECloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LINECloneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LINECloneUITests/Pods-LINECloneUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,8 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCF297B219D56350050395B /* Security.framework in Frameworks */,
-				0DCF2979219D561C0050395B /* CoreTelephony.framework in Frameworks */,
 				0DCF2977219D56100050395B /* SDWebImage.framework in Frameworks */,
 				CFB5397D5CAFE97301D2A1B5 /* Pods_LINEClone.framework in Frameworks */,
 			);
@@ -138,7 +133,6 @@
 		0DCF2943219D23C60050395B /* LINEClone */ = {
 			isa = PBXGroup;
 			children = (
-				0DCF297C219D56540050395B /* LINEClone.entitlements */,
 				0DCF2944219D23C60050395B /* AppDelegate.swift */,
 				0DCF297D219D57CE0050395B /* loginViewController.swift */,
 				0DCF2946219D23C60050395B /* ViewController.swift */,
@@ -282,7 +276,7 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -609,7 +603,6 @@
 			baseConfigurationReference = 40A61A6064DCA48F914FC8F8 /* Pods-LINEClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LINEClone/LINEClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWK6G5Y9ZS;
 				INFOPLIST_FILE = LINEClone/Info.plist;
@@ -629,7 +622,6 @@
 			baseConfigurationReference = 47A933043CE6C264101DBE47 /* Pods-LINEClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LINEClone/LINEClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWK6G5Y9ZS;
 				INFOPLIST_FILE = LINEClone/Info.plist;

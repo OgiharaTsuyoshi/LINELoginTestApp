@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import LineSDK
 import SDWebImage
 
-class sendToLineViewController: UIViewController, UIDocumentInteractionControllerDelegate {
+class sendToLineViewController: UIViewController {
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
@@ -31,22 +30,15 @@ class sendToLineViewController: UIViewController, UIDocumentInteractionControlle
         if UserDefaults.standard.object(forKey: "array") != nil {
             tweetArray = UserDefaults.standard.object(forKey: "array") as! [String]
             textLabel.text = tweetArray[selectedNumber]
-            
-            
-            userImageView.sd_setImage(with: URL(string: pictureUrlString))
             userImageView.layer.cornerRadius = userImageView.frame.width * 0.5
-            userNameLabel.text = displayName
+            
+            //LINEのユーザーネームとアイコンをImageViewとLabelに設定(追記)
         }
         
     }
-    
+    //LINEに投稿の処理を追記
     @IBAction func sendToLine() {
-        let lineSchemeMessage: String! = "line://msg/text/"
-        var scheme: String! = lineSchemeMessage + "[つぶやきがPostされました！]\n" + textLabel.text!
         
-        scheme = scheme.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        let messageURL: URL! = URL(string: scheme)
-        UIApplication.shared.open(messageURL)
     }
     
     @IBAction func backButton(){
