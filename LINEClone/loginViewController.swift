@@ -4,7 +4,7 @@
 //
 //  Created by 荻原剛志 on 2018/11/15.
 //  Copyright © 2018 OgiharaTsuyoshi. All rights reserved.
-//
+//  LineSDKとdelegateを設定
 
 import UIKit
 

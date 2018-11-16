@@ -13,10 +13,10 @@ class sendToLineViewController: UIViewController {
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
-    var selectedNumber:Int = 0
     @IBOutlet var textLabel: UILabel!
     
     var tweetArray:Array = [String]()
+    var selectedNumber:Int = 0
     
     var displayName = String()
     var pictureUrlString = String()
