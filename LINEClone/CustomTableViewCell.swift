@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
-    @IBOutlet var userimageView: UIImageView!
+    @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
 
     override func awakeFromNib() {

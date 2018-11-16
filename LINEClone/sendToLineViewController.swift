@@ -7,47 +7,50 @@
 //
 
 import UIKit
+import LineSDK
+import SDWebImage
 
-class sendToLineViewController: UIViewController, UITextViewDelegate,UIDocumentInteractionControllerDelegate {
+class sendToLineViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
+    @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
     var selectedNumber:Int = 0
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var textLabel: UILabel!
     
-    var taskArray:Array = [String]()
+    var tweetArray:Array = [String]()
+    
+    var displayName = String()
+    var pictureUrlString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UserDefaults.standard.object(forKey: "array") != nil {
-            taskArray = UserDefaults.standard.object(forKey: "array") as! [String]
-            textView.text = taskArray[selectedNumber]
+            tweetArray = UserDefaults.standard.object(forKey: "array") as! [String]
+            textLabel.text = tweetArray[selectedNumber]
+            
+            
+            userImageView.sd_setImage(with: URL(string: pictureUrlString))
+            userImageView.layer.cornerRadius = userImageView.frame.width * 0.5
+            userNameLabel.text = displayName
         }
         
     }
     
     @IBAction func sendToLine() {
         let lineSchemeMessage: String! = "line://msg/text/"
-        var scheme: String! = lineSchemeMessage + "予定がPostされました！\n" + textView.text
+        var scheme: String! = lineSchemeMessage + "[つぶやきがPostされました！]\n" + textLabel.text!
         
         scheme = scheme.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let messageURL: URL! = URL(string: scheme)
         UIApplication.shared.open(messageURL)
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    @IBAction func backButton(){
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 

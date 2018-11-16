@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var textField: UITextField!
     
     
-    var taskArray = [String]()
+    var tweetArray = [String]()
     var label: UILabel = UILabel()
     var displayName = String()
     var pictureUrlString = String()
@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 102
+        self.tableView.rowHeight = UITableView.automaticDimension //cellの幅を動的に
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -32,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaults.standard.object(forKey: "array") != nil {
-            taskArray = UserDefaults.standard.object(forKey: "array") as! [String]
+            tweetArray = UserDefaults.standard.object(forKey: "array") as! [String]
         }
         tableView.reloadData()
         
@@ -40,14 +42,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        taskArray.append(textField.text!)
-        UserDefaults.standard.set(taskArray, forKey: "array")
+        tweetArray.append(textField.text!)
+        UserDefaults.standard.set(tweetArray, forKey: "array")
         if UserDefaults.standard.object(forKey: "array") != nil {
-            taskArray = UserDefaults.standard.object(forKey: "array") as! [String]
+            tweetArray = UserDefaults.standard.object(forKey: "array") as! [String]
             
             textField.text = ""
             tableView.reloadData()
-            print(taskArray)
+            print(tweetArray)
         }
         
         
@@ -59,21 +61,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         
-        cell.userimageView.sd_setImage(with: URL(string: pictureUrlString))
-        cell.userimageView.layer.cornerRadius = 8.0
-        cell.imageView?.clipsToBounds = true
+        cell.userImageView.sd_setImage(with: URL(string: pictureUrlString))
+        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.width * 0.5
         cell.userNameLabel.text = displayName
         label = cell.contentView.viewWithTag(1) as! UILabel
-        label.text = taskArray[indexPath.row]
+        label.text = tweetArray[indexPath.row]
+        label.sizeToFit()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count
+        return tweetArray.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,9 +85,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            taskArray.remove(at: indexPath.row)
+            tweetArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            UserDefaults.standard.set(taskArray, forKey: "array")
+            UserDefaults.standard.set(tweetArray, forKey: "array")
         }
     }
     
@@ -95,6 +96,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.identifier == "next"{
             let sendToLineVC:sendToLineViewController = segue.destination as! sendToLineViewController
             sendToLineVC.selectedNumber = count
+            sendToLineVC.displayName = self.displayName
+            sendToLineVC.pictureUrlString = self.pictureUrlString
         }
     }
     

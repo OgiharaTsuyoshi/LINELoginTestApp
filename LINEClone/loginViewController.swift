@@ -11,6 +11,11 @@ import LineSDK
 
 class loginViewController: UIViewController, LineSDKLoginDelegate {
     
+    @IBOutlet var loginView: UIView!
+    @IBOutlet var lineButton: UIButton!
+    @IBOutlet var facebookButton: UIButton!
+    @IBOutlet var twitterButton: UIButton!
+    
     var displayName = String()
     var pictureURL = String()
     var pictureUrlString = String()
@@ -19,6 +24,9 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
         super.viewDidLoad()
 
         LineSDKLogin.sharedInstance().delegate = self
+        lineButton.layer.cornerRadius = lineButton.frame.width * 0.5
+        facebookButton.layer.cornerRadius = facebookButton.frame.width * 0.5
+        twitterButton.layer.cornerRadius = twitterButton.frame.width * 0.5
     }
     
     @IBAction func didTapLogin(_ sender: UIButton) {
@@ -48,15 +56,5 @@ class loginViewController: UIViewController, LineSDKLoginDelegate {
         VC.displayName = self.displayName
         VC.pictureUrlString = self.pictureUrlString
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
