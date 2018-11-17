@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
+        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.width * 0.5
         
         //cellのImageViewとLabelにLINEから取得したユーザーネームとアイコン、入力したつぶやきを入れる(追記)
         
